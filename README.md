@@ -1,3 +1,0 @@
-# Weather
-weather app
-#heading 
