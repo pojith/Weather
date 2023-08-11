@@ -1,0 +1,125 @@
+*{  
+   margin: 0;
+   padding: 0;
+   font-family:'poppins',sans-serif;
+   box-sizing: border-box;
+}
+html{
+    
+     height: 100%;
+     background: linear-gradient(to bottom right, #0033cc 40%, #ffffff 100%);
+}
+ body{
+    height: 100%;
+ }
+.all{
+    display: flex;
+    justify-content: center;
+  
+}
+
+.card_holder{
+   
+    border: black,10px;
+    width:90%;
+    max-width: 470px;
+    background-color: black;
+    text-align:center;
+    color:#fff;
+    border-radius: 20px;
+    margin-top: 80px;
+    padding-left:80px;
+    padding-right:70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: background-color 15s;
+    transition-delay: 10s;
+    background: linear-gradient(135deg,#38d4aa,#5b548a);
+}
+.search{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 1px;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+
+}
+.search input{
+    border: 0px;
+    outline: 0;
+    background:#e5ded4;
+    padding:10px 20px;
+    height:35px;
+    border-radius: 30px;
+    flex:1;
+    margin-right: 10px;
+    font-size :12px;
+   
+
+}
+.search button{
+    border: 0px;
+    outline: 0;
+    border-radius: 50px;
+    width:35px;
+    height:35px;
+    cursor:pointer;
+    margin-right:30px;
+}
+.weather_icon{
+    margin-top: 0px;
+    height: 200px;
+   margin-right: 10px;
+
+}
+.climate{
+    display: none;
+}
+.climate h2{
+    font-size: 50px;
+    font-weight: 700px;
+    margin-bottom: 10px;
+}
+.climate h3{
+    font-size: 25px;
+    font-weight: 200px;
+    margin-top: 1px;
+    margin-bottom: 30px;
+}
+.detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+.col{
+    margin: 8px;
+    display: flex;
+    align-items: center;
+    text-align: LEFT;
+    justify-content:space-around;
+}
+.col img{
+ width:50px;
+ margin-right: 10px;
+}
+.humidity,.wind{
+    font-size: medium;
+}
+.err{
+    display: none;
+}
+.search input:hover{
+    cursor: pointer;
+    background-color: #dedef4;
+    box-shadow: 10px 10px 25px rgb(0, 0, 0);
+}
+.search button:hover{
+    cursor: pointer;
+    background-color: #dedef4;
+    box-shadow: 10px 10px 25px black;
+}
+

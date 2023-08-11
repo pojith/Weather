@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER</title>
+    <link rel="stylesheet" href="weather-style.css">
+</head>
+
+<body >
+    <div class="all">
+    
+<div class="card_holder">
+    <div class="search">
+        <input type="text" placeholder="Enter City Name" spellcheck="false">
+         <button type="button"><img src="weather-app-img/images/icon_search.svg" alt="">
+         </button>
+       
+    </div>
+    <div class="err"><p>Invalid city name</p></div>
+    <div class="climate">
+        <img src="weather-app-img/images/rain.png" class="weather_icon">
+        <h2 class="temperature">22 °C</h2>
+        <h3 class="city_name"></h3>
+       <div class="detail">
+            <div class="col">
+                <img src="weather-app-img/images/humidity.png" >
+                <div>
+                    <p class="humidity">50%</p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="weather-app-img/images/wind.png" >
+                <div>
+                    <p class="wind"> km/h</p>
+                    <p>wind-speed</p>
+                </div>
+            </div>
+         </div>
+       </div>
+    </div>
+
+
+<script>
+
+const box=document.querySelector(".search input");
+const but=document.querySelector(".search button");
+const weatherIcon=document.querySelector("weather_icon");
+const apiKey=`7691bcee3a4c51e7ccc641e3476e5558`;
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+// Function to fetch data from the API using Axios
+function getWeatherData(cityName) {
+  const url = `${apiUrl}?q=${cityName}&appid=${apiKey}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {work(data);
+    })
+
+    .catch((error) => {
+        document.querySelector(".err").style.display="block";
+        document.querySelector(".climate").style.display="none";
+    
+    });
+
+}
+function work(data){
+    document.querySelector(".city_name").innerText=data.name;
+    document.querySelector(".wind").innerText=data.wind.speed+" "+"Km/hr";
+    document.querySelector(".humidity").innerText=data.main.humidity+"%";
+    document.querySelector(".temperature").innerText=Math.round(data.main.temp-273.15)+" "+"°C ";
+    if(data.weather[0].main=="Clear")
+    document.querySelector(".weather_icon").src="weather-app-img/images/clear.png";
+    else if(data.weather[0].main=="Clouds")
+    document.querySelector(".weather_icon").src="weather-app-img/images/clouds.png";
+    else if(data.weather[0].main=="Rain")
+    document.querySelector(".weather_icon").src="weather-app-img/images/rain.png";
+     else  if(data.weather[0].main=="Drizzle")
+     document.querySelector(".weather_icon").src="weather-app-img/images/drizzle.png";
+     else   if(data.weather[0].main=="Mist")
+     document.querySelector(".weather_icon").src="weather-app-img/images/mist.png";
+    
+     document.querySelector(".climate").style.display="block";
+     document.querySelector(".err").style.display="none";
+
+}
+but.addEventListener("click",()=>{
+    getWeatherData(box.value);
+})
+</script>
+</div>
+</body>
+</html>
