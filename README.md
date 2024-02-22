@@ -4,3 +4,4 @@ weather app
 # Its gives info of the temp
 
 it require to add location the place to display
+ann some fore cast details
