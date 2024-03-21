@@ -20,7 +20,7 @@ To run the website locally, follow these steps:
 2. Navigate to the project directory.
 3. Open the `index.html` file in a web browser.
 
-Alternatively, you can access the live version of the website hosted at [Insert Live Website URL].
+
 
 ## Configuration
 To configure the website to fetch weather data from a different API or to make any other adjustments, follow these steps:
