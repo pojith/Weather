@@ -9,11 +9,6 @@ This repository contains the codebase for a weather website. The website serves 
 - **Search Functionality:** Users can search for weather information for any location worldwide using the search bar.
 - **Responsive Design:** The website is designed to be responsive, ensuring optimal viewing experience across different devices and screen sizes.
 
-## Technologies Used
-- **Frontend:** HTML5, CSS3, JavaScript
-- **Backend:** None (The website directly fetches data from a weather API)
-- **Weather API:** [Insert Weather API Name/Provider]
-
 ## Getting Started
 To run the website locally, follow these steps:
 1. Clone this repository to your local machine.
